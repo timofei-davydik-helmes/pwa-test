@@ -5,6 +5,7 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
+  "id": "/pwa-test/",
   "description": "A simple PWA to scan QR codes",
   "icons": [
     {
