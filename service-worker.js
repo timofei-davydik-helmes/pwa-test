@@ -4,7 +4,7 @@ const cacheName = 'qr-scanner-v1';
 // List of URLs to cache
 const urlsToCache = [
   'index.html',
-  'styles.css',
+  'style.css',
   'app.js'
 ];
 
