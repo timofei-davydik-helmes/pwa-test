@@ -12,7 +12,15 @@
 </head>
 <body>
 <h1>QR Code Scanner</h1>
-<div id="reader" style="width: 300px; margin: auto;"></div>
+
+<!-- Scan button -->
+<button id="start-scan" style="width: 100%; max-width: 300px; background-color: #007BFF; color: white; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; display: block; margin: 20px auto;">
+    Start Scanning
+</button>
+
+<!-- Hidden QR scanner div -->
+<div id="reader" style="width: 300px; margin: auto; display: none;"></div>
+
 <p id="result"></p>
 
 <script src="https://unpkg.com/html5-qrcode"></script>

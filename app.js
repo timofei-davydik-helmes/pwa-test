@@ -18,24 +18,28 @@ if ('serviceWorker' in navigator) {
 
 const html5QrCode = new Html5Qrcode("reader");
 
-Html5Qrcode.getCameras().then(devices => {
-    if (devices && devices.length) {
-        // Find the back camera (usually has "back" in the label)
-        const backCamera = devices.find(device => device.label.toLowerCase().includes("back") || device.label.toLowerCase().includes("rear"));
+document.getElementById("start-scan").addEventListener("click", () => {
+    Html5Qrcode.getCameras().then(devices => {
+        if (devices && devices.length) {
+            const backCamera = devices.find(device =>
+                device.label.toLowerCase().includes("back") ||
+                device.label.toLowerCase().includes("rear")
+            );
 
-        const cameraId = backCamera ? backCamera.id : devices[0].id; // Use back camera if found, else fall back to the first camera
+            const cameraId = backCamera ? backCamera.id : devices[0].id;
 
-        html5QrCode.start(
-            cameraId,
-            {
-                fps: 10,
-                qrbox: { width: 250, height: 250 }
-            },
-            onScanSuccess,
-            onScanFailure
-        );
-    }
-}).catch(err => {
-    console.error("Camera error", err);
+            document.getElementById("reader").style.display = "block"; // Show scanner
+            document.getElementById("start-scan").style.display = "none"; // Hide button
+
+            html5QrCode.start(
+                cameraId,
+                { fps: 10, qrbox: { width: 250, height: 250 } },
+                onScanSuccess,
+                onScanFailure
+            );
+        }
+    }).catch(err => {
+        console.error("Camera error", err);
+    });
 });
 
