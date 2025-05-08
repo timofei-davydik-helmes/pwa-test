@@ -45,7 +45,14 @@ document.getElementById("start-scan").addEventListener("click", () => {
 
 document.getElementById("start-scan").addEventListener("click", () => {
 	if (window.deferredPrompt) {
+		try {
 		window.deferredPrompt.prompt();
+		}
+	catch (e) {
+		alert(e);
+	}
+	} else {
+		alert('no deferred prompt');
 	}
 });
 
