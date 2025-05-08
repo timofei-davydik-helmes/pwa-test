@@ -6,6 +6,16 @@ function onScanFailure(error) {
     // Optional: handle errors (not required)
 }
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then((registration) => {
+            console.log('Service Worker registered:', registration);
+        })
+        .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+        });
+}
+
 const html5QrCode = new Html5Qrcode("reader");
 
 Html5Qrcode.getCameras().then(devices => {
@@ -28,3 +38,4 @@ Html5Qrcode.getCameras().then(devices => {
 }).catch(err => {
     console.error("Camera error", err);
 });
+
