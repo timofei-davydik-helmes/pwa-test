@@ -3,10 +3,9 @@ const cacheName = 'qr-scanner-v1';
 
 // List of URLs to cache
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/app.js'
+  'index.html',
+  'styles.css',
+  'app.js'
 ];
 
 // Install event
