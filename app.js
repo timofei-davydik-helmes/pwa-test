@@ -44,6 +44,9 @@ document.getElementById("start-scan").addEventListener("click", () => {
 });
 
 window.addEventListener('beforeinstallprompt', (e) => {
+	if (!deferredPrompt){
+		alert('deferredPrompt is not defined');
+	}
 	deferredPrompt.prompt();
 });
 
