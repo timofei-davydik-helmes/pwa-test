@@ -43,8 +43,21 @@ document.getElementById("start-scan").addEventListener("click", () => {
     });
 });
 
+document.getElementById("start-scan").addEventListener("click", () => {
+	if (window.deferredPrompt) {
+		window.deferredPrompt.prompt();
+	}
+});
+
+function isRunningStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+
 window.addEventListener('beforeinstallprompt', (e) => {
 	e.preventDefault();
-	e.prompt();
+	window.deferredPrompt = e;
+	if (!isRunningStandalone()) {
+		document.getElementById("install-app").style.display = 'block'
+	}
 });
 
