@@ -43,7 +43,7 @@ document.getElementById("start-scan").addEventListener("click", () => {
     });
 });
 
-document.getElementById("start-scan").addEventListener("click", () => {
+document.getElementById("install-app").addEventListener("click", () => {
 	if (window.deferredPrompt) {
 		try {
 		window.deferredPrompt.prompt();
