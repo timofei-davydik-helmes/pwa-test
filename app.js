@@ -10,6 +10,7 @@ const html5QrCode = new Html5Qrcode("reader");
 
 Html5Qrcode.getCameras().then(devices => {
     if (devices && devices.length) {
+		alert(devices.map(d => d.label).join("\n"));
         // Find the back camera (usually has "back" in the label)
         const backCamera = devices.find(device => device.label.toLowerCase().includes("back") || device.label.toLowerCase().includes("rear"));
 
