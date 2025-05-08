@@ -1,7 +1,7 @@
 {
   "name": "QR Code Scanner",
   "short_name": "QR Scanner",
-  "start_url": "/",
+  "start_url": "/pwa-test/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
